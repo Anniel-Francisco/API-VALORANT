@@ -4,7 +4,8 @@
     id="modal-weapons"
     class="bg-white modal-weapon animate__animated animate__zoomIn rounded-md"
   >
-    <div v-if="Object.keys(selected).length > 0" class="h-80">
+    <!-- Details -->
+    <div v-if="Object.keys(selected).length > 0 && !skins" class="h-80">
       <div class="flex items-center justify-between text-xl mb-2">
         <span class="font-bold">
           {{ selected.shopData ? selected.shopData.category : "Knife" }}
@@ -20,7 +21,13 @@
       </div>
       <!-- Content -->
       <div class="flex flex-row h-full content-weapon gap-2">
-        <Skins :selected="selected" />
+        <div
+          class="flex cursor-pointer justify-center duration-300 hover:shadow-xl hover:shadow-slate-400 items-center rounded-lg"
+          :style="`background-color: #cbd5e1;background-image: url('${selected.killStreamIcon}'); background-size: contain;`"
+          @click="skins = true"
+        >
+          <img class="w-full" :src="`${selected.displayIcon}`" alt="" />
+        </div>
 
         <div class="w-full">
           <h2
@@ -123,11 +130,44 @@
         </div>
       </div>
     </div>
+    <!-- Skins -->
+    <div
+      v-if="skins"
+      id="modal-skins"
+      class="bg-white modal-skins animate__animated animate__fadeInLeft h-full rounded-md"
+    >
+      <div class="flex items-center justify-between text-xl mb-2">
+        <span class="font-bold"> Skins </span>
+
+        <div
+          class="text-4xl font-extrabold md:hover:-translate-x-3 md:duration-300 w-7 cursor-pointer"
+          @click="onCloseSkins"
+        >
+          &larr;
+        </div>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap items-center w-100 scroll-bar h-full">
+          <div
+            class="p-4 flex max-md:flex-wrap items-center justify-center w-full"
+            v-for="(skin, index) in selected.skins"
+            :key="index"
+          >
+            <img class="w-80" :src="skin.displayIcon" alt="" />
+            <span
+              class="text-xl rounded-lg p-2 text-white max-md:mt-4"
+              style="background-color: crimson"
+              >{{ skin.displayName }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </dialog>
 </template>
 
 <script>
-import Skins from "./Skins.vue";
 export default {
   name: "DetailsWeapon",
   props: {
@@ -136,11 +176,11 @@ export default {
       default: {},
     },
   },
-  components: {
-    Skins,
-  },
+  components: {},
   data() {
-    return {};
+    return {
+      skins: false,
+    };
   },
   watch: {
     selected: {
@@ -165,6 +205,15 @@ export default {
         this.$refs.modal_detail_weapon.close();
       }, 500);
       this.$emit("onCloseWeapon", {});
+    },
+
+    onCloseSkins() {
+      const modal = document.getElementById("modal-skins");
+      modal.classList.add("animate__fadeOutLeft");
+      setTimeout(() => {
+        modal.classList.remove("animate__fadeOutLeft");
+        this.skins = false;
+      }, 600);
     },
   },
 };
