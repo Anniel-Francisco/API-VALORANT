@@ -36,7 +36,7 @@
         {{ data.displayName }}
       </h2>
       <p
-        class="text-justify m-5 text-xl animate__animated animate__fadeInUp hover:bg-slate-300 transition-all duration-300"
+        class="text-justify text-xl animate__animated animate__fadeInUp hover:bg-slate-300 transition-all duration-300"
       >
         {{ data.description }}
       </p>
@@ -49,12 +49,12 @@
         <div
           v-for="abilities of data.abilities"
           :key="abilities.displayName"
-          class="text-center w-full"
+          class="flex justify-center items-center flex-col text-center w-full"
         >
           <img
             :src="abilities.displayIcon"
             alt=""
-            class="ml-auto hover:shadow-xl p-1 active:scale-90 hover:shadow-indigo-500/40 transition duration-300 ease-in-out mr-auto rounded-lg flex flex-wrap w-14 bg-slate-400"
+            class="hover:shadow-xl p-1 active:scale-90 hover:shadow-indigo-500/40 transition duration-300 ease-in-out rounded-lg flex flex-wrap w-14 bg-slate-400"
             :style="`background-color: #${data.backgroundGradientColors[1]};`"
           />
           <h3 class="font-medium text-lg">{{ abilities.displayName }}</h3>

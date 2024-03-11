@@ -1,7 +1,7 @@
 <template>
   <dialog
     ref="modal_detail_weapon"
-    id="modal-weapons"
+    id="modal-weapon"
     class="bg-white modal-weapon animate__animated animate__zoomIn rounded-md"
   >
     <!-- Details -->
@@ -22,7 +22,7 @@
       <!-- Content -->
       <div class="flex flex-row h-full content-weapon gap-2">
         <div
-          class="flex cursor-pointer justify-center duration-300 hover:shadow-xl hover:shadow-slate-400 items-center rounded-lg"
+          class="flex cursor-pointer justify-center duration-300 hover:shadow-lg hover:shadow-slate-400 items-center rounded-lg"
           :style="`background-color: #cbd5e1;background-image: url('${selected.killStreamIcon}'); background-size: contain;`"
           @click="skins = true"
         >
@@ -196,7 +196,7 @@ export default {
       this.$refs.modal_detail_weapon.showModal();
     },
     hide() {
-      const modal = document.getElementById("modal-weapons");
+      const modal = document.getElementById("modal-weapon");
       modal.classList.add("animate__zoomOut");
 
       setTimeout(() => {
