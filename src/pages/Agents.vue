@@ -93,15 +93,13 @@ export default {
   },
   computed: {
     filterAgents() {
-      let filterText = this.filter.toLowerCase(); // Convertir filtro a minúsculas
+      let filterText = this.filter.toLowerCase();
       let filterData = this.data.filter((agent) =>
         agent.displayName.toLowerCase().includes(filterText)
       );
 
       if (filterData.length === 0) {
-        setTimeout(() => {
-          this.noAgent = "No agent found";
-        }, 200);
+        this.noAgent = "No agent found";
       } else {
         this.noAgent = "";
       }

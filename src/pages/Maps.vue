@@ -20,7 +20,7 @@
         :icon="['fas', 'search']"
       />
     </div>
-
+    <DetailsMaps :selected="map" @onCloseMap="closeMap" />
     <div class="grid relative grid-cols-3 wdth gap-5 p-5">
       <div
         v-for="map of filterMaps"
@@ -42,11 +42,11 @@
 </template>
 
 <script>
+import DetailsMaps from "../components/maps/DetailsMaps.vue";
 import ValorantAPI from "../api/ValorantAPI";
-
 export default {
   name: "maps",
-  components: {},
+  components: { DetailsMaps },
   data() {
     return {
       data: [],
@@ -76,6 +76,9 @@ export default {
     closemap(empty) {
       this.map = empty;
     },
+    closeMap(val) {
+      this.map = val;
+    },
   },
   computed: {
     filterMaps() {
@@ -85,9 +88,7 @@ export default {
       );
 
       if (filterData.length === 0) {
-        setTimeout(() => {
-          this.noMap = "No map found";
-        }, 200);
+        this.noMap = "No map found";
       } else {
         this.noMap = "";
       }

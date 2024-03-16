@@ -20,7 +20,7 @@
         :icon="['fas', 'search']"
       />
     </div>
-
+    <DetailsGameModes :selected="gameMode" @onCloseGameMode="closeGameMode" />
     <div class="grid relative grid-cols-3 wdth gap-5 p-5">
       <div
         v-for="gameMode of filterGameModes"
@@ -43,10 +43,10 @@
 
 <script>
 import ValorantAPI from "../api/ValorantAPI";
-
+import DetailsGameModes from "../components/gamemodes/DetailsGameModes.vue";
 export default {
   name: "GameModes",
-  components: {},
+  components: { DetailsGameModes },
   data() {
     return {
       data: [],
@@ -73,8 +73,8 @@ export default {
       this.gameMode = { ...gameMode };
     },
 
-    closegameMode(empty) {
-      this.gameMode = empty;
+    closeGameMode(val) {
+      this.gameMode = val;
     },
   },
   computed: {
@@ -85,9 +85,7 @@ export default {
       );
 
       if (filterData.length === 0) {
-        setTimeout(() => {
-          this.noGameMode = "No game mode found";
-        }, 200);
+        this.noGameMode = "No game mode found";
       } else {
         this.noGameMode = "";
       }

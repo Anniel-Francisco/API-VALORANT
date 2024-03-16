@@ -87,9 +87,7 @@ export default {
       );
 
       if (filterData.length === 0) {
-        setTimeout(() => {
-          this.noWeapon = "No weapon found";
-        }, 200);
+        this.noWeapon = "No weapon found";
       } else {
         this.noWeapon = "";
       }
