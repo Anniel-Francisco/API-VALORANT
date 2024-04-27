@@ -8,7 +8,7 @@
     <!-- Content -->
     <div class="mt-5">
       <div class="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-4 gap-5">
-        <CardWeapon
+        <Card
           v-for="weapon of filterWeapons"
           :key="weapon.uuid"
           :icon="weapon.displayIcon"
@@ -28,7 +28,7 @@
 
 <script>
 import DetailsWeapon from "../components/weapons/DetailsWeapon.vue";
-import CardWeapon from "../components/cards/CardWeapon.vue";
+import Card from "../components/cards/Card.vue";
 import Header from "../components/general/Header.vue";
 //
 import ValorantAPI from "../api/ValorantAPI";
@@ -37,7 +37,7 @@ export default {
   components: {
     DetailsWeapon,
     Header,
-    CardWeapon,
+    Card,
   },
   data() {
     return {

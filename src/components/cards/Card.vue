@@ -4,7 +4,7 @@
     style="background-color: #b7cde7"
   >
     <img :src="icon" alt="" class="w-28 ml-auto mr-auto" />
-    <h2 class="font-bold gamemode-name text-black">
+    <h2 class="font-bold text-black">
       {{ name }}
     </h2>
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "CardGameMode",
+  name: "CardWeapon",
   props: {
     icon: {
       type: String,

@@ -4,7 +4,7 @@
     <!-- Content -->
     <div class="mt-5">
       <div class="grid grid-cols-4 max-md:grid-cols-1 gap-5">
-        <CardMap
+        <Card
           v-for="map of filterMaps"
           :key="map.uuid"
           :icon="map.displayIcon"
@@ -25,12 +25,12 @@
 <script>
 import DetailsMaps from "../components/maps/DetailsMaps.vue";
 import Header from "../components/general/Header.vue";
-import CardMap from "../components/cards/CardMap.vue";
+import Card from "../components/cards/Card.vue";
 //
 import ValorantAPI from "../api/ValorantAPI";
 export default {
   name: "maps",
-  components: { DetailsMaps, CardMap, Header },
+  components: { DetailsMaps, Card, Header },
   data() {
     return {
       data: [],

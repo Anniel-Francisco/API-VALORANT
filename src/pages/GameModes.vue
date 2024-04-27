@@ -8,7 +8,7 @@
     <!-- Content -->
     <div class="mt-5">
       <div class="grid grid-cols-4 max-md:grid-cols-1 gap-5">
-        <CardGameMode
+        <Card
           v-for="gameMode of filterGameModes"
           :key="gameMode.uuid"
           :name="gameMode.displayName"
@@ -28,12 +28,12 @@
 <script>
 import Header from "../components/general/Header.vue";
 import DetailsGameModes from "../components/gamemodes/DetailsGameModes.vue";
-import CardGameMode from "../components/cards/CardGameMode.vue";
+import Card from "../components/cards/Card.vue";
 //
 import ValorantAPI from "../api/ValorantAPI";
 export default {
   name: "GameModes",
-  components: { DetailsGameModes, Header, CardGameMode },
+  components: { DetailsGameModes, Header, Card },
   data() {
     return {
       data: [],
