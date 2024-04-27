@@ -1,4 +1,4 @@
-# VALORANT
+# API-VALORANT
 
 
 ## Install the dependencies
