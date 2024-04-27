@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     onChange(e) {
-      this.$emit("filter", e.target.value);
+      this.$emit("filter", this.filter);
     },
   },
 };
