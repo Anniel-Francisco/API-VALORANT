@@ -13,7 +13,7 @@
         type="search"
         class="animate__animated min-w-full relative focus:shadow-lg focus:shadow-slate-600-100 animate__fadeInLeftBig rounded-md p-2 mt-5 outline-none pl-8"
         placeholder="Search"
-        @change="onChange"
+        @input="onChange"
         v-model="filter"
       />
       <font-awesome-icon
@@ -44,8 +44,8 @@ export default {
     };
   },
   methods: {
-    onChange() {
-      this.$emit("filter", this.filter);
+    onChange(e) {
+      this.$emit("filter", e.target.value);
     },
   },
 };
