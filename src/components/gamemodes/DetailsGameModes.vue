@@ -88,4 +88,10 @@ export default {
   height: 250px;
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .modal-game {
+    width: 95%;
+  }
+}
 </style>

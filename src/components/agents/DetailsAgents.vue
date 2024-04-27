@@ -1,7 +1,8 @@
 <template>
   <div
-    class="animate__animated animate__fadeInUp details w-96 bi bottom-0 overflow-y-auto scroll-bar lg:h-screen bg-slate-300 shadow-indigo-500/40 shadow-xl fixed right-0 mr-5"
+    class="animate__animated animate__fadeInUp details w-96 pb-5 bgImage overflow-y-auto scroll-bar lg:h-screen bg-slate-300 shadow-indigo-500/40 shadow-xl sticky top-0"
     :style="`background-image: url('${data.background}')`"
+    style="width: 400px"
   >
     <div
       v-if="loading"
@@ -82,8 +83,7 @@ export default {
         this.loading = true;
         setTimeout(() => {
           this.loading = false;
-        }, 
-        );
+        });
       },
       deep: true,
     },
@@ -95,7 +95,7 @@ export default {
 .v-color {
   background-color: #c93742;
 }
-.bi {
+.bgImage {
   background-position: center center;
   background-size: contain;
 }
@@ -105,25 +105,6 @@ export default {
 @media (max-width: 1024px) {
   .details {
     display: none;
-  }
-}
-
-.loader {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #c93742;
-  animation: spin 1s infinite linear;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 </style>

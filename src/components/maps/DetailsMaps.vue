@@ -82,4 +82,10 @@ export default {
   height: 350px;
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .modal-map {
+    width: 95%;
+  }
+}
 </style>
