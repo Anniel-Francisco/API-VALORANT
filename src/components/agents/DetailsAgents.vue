@@ -71,7 +71,7 @@ export default {
 <style scoped>
 .bgImage {
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
 }
 .scroll-bar::-webkit-scrollbar {
   display: none;
