@@ -2,7 +2,7 @@
   <div
     class="animate__animated animate__fadeInUp details w-96 pb-5 bgImage overflow-y-auto scroll-bar lg:h-screen bg-slate-300 shadow-indigo-500/40 shadow-xl sticky top-0"
     :style="`background-image: url('${data.background}');`"
-    style="width: 400px"
+    style="width: 450px"
   >
     <div
       v-if="Object.keys(data).length == 0"
@@ -28,7 +28,7 @@
         {{ data.displayName }}
       </h2>
       <p
-        class="text-justify m-5 text-base animate__animated animate__fadeInUp hover:bg-slate-300 transition-all duration-300"
+        class="text-justify m-5 text-lg animate__animated animate__fadeInUp hover:bg-slate-300 transition-all duration-300"
       >
         {{ data.description }}
       </p>
