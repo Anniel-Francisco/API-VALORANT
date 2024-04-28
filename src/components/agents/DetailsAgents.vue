@@ -2,7 +2,7 @@
   <div
     class="animate__animated animate__fadeInUp details w-96 pb-5 bgImage overflow-y-auto scroll-bar lg:h-screen bg-slate-300 shadow-indigo-500/40 shadow-xl sticky top-0"
     :style="`background-image: url('${data.background}');`"
-    style="width: 450px"
+    style="width: 400px"
   >
     <div
       v-if="Object.keys(data).length == 0"
