@@ -146,7 +146,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 65%;
   height: 100%;
 }
 .swiper-element {
