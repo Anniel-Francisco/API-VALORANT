@@ -136,7 +136,7 @@ export default {
 </script>
 <style scoped>
 .main {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("../assets/main-background.jpg");
   background-position: center center;
   background-size: cover;
