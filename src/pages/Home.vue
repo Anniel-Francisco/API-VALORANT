@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col min-w-full p-10 max-md:p-5 main">
+  <div class="flex flex-col justify-between min-w-full p-10 max-md:p-5 main">
     <div
-      class="grid grid-cols-2 justify-center max-md:grid-cols-1 items-center"
+      class="grid grid-cols-2 flex-grow justify-center max-md:grid-cols-1 items-center"
       style="height: 100%"
     >
       <div>
