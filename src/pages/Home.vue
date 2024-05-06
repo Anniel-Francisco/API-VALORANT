@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col justify-between min-w-full p-10 max-md:p-5 main">
+  <div
+    class="flex flex-col overflow-hidden justify-between p-10 max-md:p-5 main"
+  >
     <div
       class="grid grid-cols-2 flex-grow justify-center max-md:grid-cols-1 items-center"
       style="height: 100%"
@@ -137,6 +139,7 @@ export default {
 <style scoped>
 .main {
   min-height: 100vh;
+  min-width: 100vw;
   background-image: url("../assets/main-background.jpg");
   background-position: center center;
   background-size: cover;
